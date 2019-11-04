@@ -1,5 +1,6 @@
 import boto3
 from botocore.client import ClientError
+import os
 
 os.environ['AWS_SHARED_CREDENTIALS_FILE'] = "C:/Users/Hp/.aws/credentials"
 
