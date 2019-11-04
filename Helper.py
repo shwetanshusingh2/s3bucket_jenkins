@@ -1,15 +1,18 @@
 import boto3
 from botocore.client import ClientError
+
+os.environ['AWS_SHARED_CREDENTIALS_FILE'] = "C:/Users/Hp/.aws/credentials"
+
+os.environ['AWS_PROFILE'] = "default"
+os.environ['AWS_DEFAULT_REGION'] = "ap-south-1"
+
 import User_Defined_Variables as user_variable
 import zipfile,os
 import time
 import stack as s
 s3 = boto3.resource('s3')
 
-os.environ['AWS_SHARED_CREDENTIALS_FILE'] = "C:/Users/Hp/.aws/credentials"
 
-os.environ['AWS_PROFILE'] = "default"
-os.environ['AWS_DEFAULT_REGION'] = "ap-south-1"
 
 try:
     s3.create_bucket(Bucket='data-shwet', CreateBucketConfiguration={'LocationConstraint': 'ap-south-1'})
